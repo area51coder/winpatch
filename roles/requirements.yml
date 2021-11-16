@@ -1,0 +1,6 @@
+---
+
+- src: https://github.com/area51coder/roles
+  name: roles
+  version: 'v3.1'
+  scm: git
