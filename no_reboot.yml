@@ -1,0 +1,14 @@
+---
+- hosts: "{{ target }}"
+  ignore_errors: true
+  vars:
+    patchWinWUServer: "http://10.0.0.1:8530"
+    patchWinDoNotConnectToWindowsUpdateInternetLocations: 1
+    patchWinNoAutoRebootWithLoggedOnUsers: 1
+  tasks:
+  - name: Calling role
+    include_role:
+      name: winpatch
+      tasks_from: update_NoReboot.yml
+    tags:
+    - update
